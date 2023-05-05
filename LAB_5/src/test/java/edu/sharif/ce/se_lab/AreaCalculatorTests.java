@@ -9,7 +9,8 @@ public class AreaCalculatorTests {
     public void testAreaCalculation_1() {
         double length = 5;
         double width = 3;
-        double area = Rectangle.computeArea(length, width);
+        Rectangle rectangle = new Rectangle(length, width);
+        double area = rectangle.computeArea();
         Assert.assertEquals(15d, area, 0.001d);
     }
 }
