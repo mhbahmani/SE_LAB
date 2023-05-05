@@ -26,4 +26,17 @@ public class AreaCalculatorTests {
         Assert.assertEquals(8d, rectangle.getLength(), 0.001d);
         Assert.assertEquals(5d, rectangle.getWidth(), 0.001d);
     }
+
+    @Test
+    public void squareTest() {
+        Rectangle square = new Square(5);
+        Assert.assertEquals(square.getLength(), square.getWidth(), 0.001d);
+        Assert.assertEquals(25d, square.computeArea(), 0.001d);
+        square.setLength(6);
+        Assert.assertEquals(6, square.getWidth(), 0.001d);
+        Assert.assertEquals(36d, square.computeArea(), 0.001d);
+        square.setWidth(8);
+        Assert.assertEquals(8, square.getLength(), 0.001d);
+        Assert.assertEquals(64d, square.computeArea(), 0.001d);
+    }
 }
