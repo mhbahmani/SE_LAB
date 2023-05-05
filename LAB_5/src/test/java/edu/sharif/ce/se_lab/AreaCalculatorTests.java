@@ -13,4 +13,17 @@ public class AreaCalculatorTests {
         double area = rectangle.computeArea();
         Assert.assertEquals(15d, area, 0.001d);
     }
+
+    @Test
+    public void setterAndGetterTests() {
+        Rectangle rectangle = new Rectangle(4, 3);
+        Assert.assertEquals(12d, rectangle.computeArea(), 0.001d);
+        Assert.assertEquals(4d, rectangle.getLength(), 0.001d);
+        Assert.assertEquals(3d, rectangle.getWidth(), 0.001d);
+        rectangle.setLength(8);
+        rectangle.setWidth(5);
+        Assert.assertEquals(40d, rectangle.computeArea(), 0.001d);
+        Assert.assertEquals(8d, rectangle.getLength(), 0.001d);
+        Assert.assertEquals(5d, rectangle.getWidth(), 0.001d);
+    }
 }
