@@ -12,4 +12,18 @@ public class Rectangle {
     public double computeArea() {
         return length * width;
     }
+
+    public double getLength() {
+        return 0;
+    }
+
+    public double getWidth() {
+        return 0;
+    }
+
+    public void setLength(double length) {
+    }
+
+    public void setWidth(double width) {
+    }
 }
