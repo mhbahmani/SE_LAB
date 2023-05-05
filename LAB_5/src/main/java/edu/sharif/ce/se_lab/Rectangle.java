@@ -14,16 +14,18 @@ public class Rectangle {
     }
 
     public double getLength() {
-        return 0;
+        return this.length;
     }
 
     public double getWidth() {
-        return 0;
+        return this.width;
     }
 
     public void setLength(double length) {
+        this.length = length;
     }
 
     public void setWidth(double width) {
+        this.width = width;
     }
 }
