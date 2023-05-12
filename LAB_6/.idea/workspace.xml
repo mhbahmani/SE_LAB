@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="458c2893-85bc-4e9f-8f47-b8d53cf6bc9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab_6/builder_pattern/BuilderPattern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab_6/builder_pattern/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lab_6/builder_pattern/BuilderPatternTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,6 +44,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/mohammadhoseinbahmani/Projects/SE_LAB/LAB_6/src/main/java/org/example/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
@@ -54,10 +54,27 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="lab_6.builder_pattern" />
       <recent name="org.example" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="BuilderPatternTest.testComputerBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LAB_6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab_6.builder_pattern.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lab_6.builder_pattern" />
+      <option name="MAIN_CLASS_NAME" value="lab_6.builder_pattern.BuilderPatternTest" />
+      <option name="METHOD_NAME" value="testComputerBuilder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="LAB_5" />
       <method v="2">
@@ -71,6 +88,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BuilderPatternTest.testComputerBuilder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683894148512</updated>
       <workItem from="1683894149608" duration="400000" />
-      <workItem from="1683896008383" duration="1417000" />
+      <workItem from="1683896008383" duration="1743000" />
     </task>
     <servers />
   </component>
