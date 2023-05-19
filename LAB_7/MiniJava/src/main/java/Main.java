@@ -6,7 +6,6 @@ import parser.Parser;
 public class Main {
     public static void main(String[] args) {
         Parser parser = new Parser();
-        // start parsing
         parser.startParse(
                 new Scanner(
                         Objects.requireNonNull(
