@@ -11,6 +11,27 @@ public class Rule {
 
     public Rule(String stringRule) {
         int index = stringRule.indexOf("#");
+        stringRule = getStringRule(stringRule, index);
+        String[] splited = stringRule.split("->");
+        LHS = NonTerminal.valueOf(splited[0]);
+        RHS = new ArrayList<>();
+        if (splited.length > 1) {
+            splitGreat(splited);
+        }
+    }
+
+    private void splitGreat(String[] splited) {
+        String[] RHSs = splited[1].split(" ");
+        for (String s : RHSs) {
+            try {
+                RHS.add(new GrammarSymbol(NonTerminal.valueOf(s)));
+            } catch (Exception e) {
+                RHS.add(new GrammarSymbol(new Token(Token.getTypeFormString(s), s)));
+            }
+        }
+    }
+
+    private String getStringRule(String stringRule, int index) {
         if (index != -1) {
             try {
                 semanticAction = Integer.parseInt(stringRule.substring(index + 1));
@@ -21,19 +42,7 @@ public class Rule {
         } else {
             semanticAction = 0;
         }
-        String[] splited = stringRule.split("->");
-        LHS = NonTerminal.valueOf(splited[0]);
-        RHS = new ArrayList<>();
-        if (splited.length > 1) {
-            String[] RHSs = splited[1].split(" ");
-            for (String s : RHSs) {
-                try {
-                    RHS.add(new GrammarSymbol(NonTerminal.valueOf(s)));
-                } catch (Exception e) {
-                    RHS.add(new GrammarSymbol(new Token(Token.getTypeFormString(s), s)));
-                }
-            }
-        }
+        return stringRule;
     }
 
     public NonTerminal getLHS() {
