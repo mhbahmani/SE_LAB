@@ -1,6 +1,6 @@
 package parser;
 
-import Log.Log;
+import log.Log;
 import codeGenerator.CodeGenerator;
 import codeGenerator.CodeGeneratorImpl;
 import codeGenerator.Memory;
