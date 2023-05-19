@@ -1,4 +1,4 @@
-package errorHandler;
+package error_handler;
 
 public class ErrorHandler {
     public static boolean hasError = false;

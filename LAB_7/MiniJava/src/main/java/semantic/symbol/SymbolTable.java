@@ -4,7 +4,7 @@ import code_generator.Address;
 import code_generator.Memory;
 import code_generator.TypeAddress;
 import code_generator.VarType;
-import errorHandler.ErrorHandler;
+import error_handler.ErrorHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;

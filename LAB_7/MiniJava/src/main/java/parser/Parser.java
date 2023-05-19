@@ -3,7 +3,7 @@ package parser;
 import code_generator.CodeGenerator;
 import code_generator.CodeGeneratorImpl;
 import code_generator.Memory;
-import errorHandler.ErrorHandler;
+import error_handler.ErrorHandler;
 import log.Log;
 import resource_loader.ResourceLoader;
 import scanner.LexicalAnalyzer;
