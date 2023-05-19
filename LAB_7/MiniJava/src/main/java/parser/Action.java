@@ -1,10 +1,10 @@
 package parser;
 
 public class Action {
-    public act action;
+    public Act action;
     public int number;
 
-    public Action(act action, int number) {
+    public Action(Act action, int number) {
         this.action = action;
         this.number = number;
     }

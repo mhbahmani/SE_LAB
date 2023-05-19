@@ -1,5 +1,5 @@
 package parser;
 
-enum act {
+enum Act {
     shift, reduce, accept
 }

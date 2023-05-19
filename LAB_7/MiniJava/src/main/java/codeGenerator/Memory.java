@@ -3,7 +3,7 @@ package codeGenerator;
 import java.util.ArrayList;
 
 public class Memory {
-    private ArrayList<_3AddressCode> codeBlock;
+    private ArrayList<ThreeAddressCode> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
     private final int stratTempMemoryAddress = 500;
@@ -12,7 +12,7 @@ public class Memory {
     private final int tempSize = 4;
 
     public Memory() {
-        codeBlock = new ArrayList<_3AddressCode>();
+        codeBlock = new ArrayList<ThreeAddressCode>();
         lastTempIndex = stratTempMemoryAddress;
         lastDataAddress = stratDataMemoryAddress;
     }
@@ -28,17 +28,17 @@ public class Memory {
     }
 
     public int saveMemory() {
-        codeBlock.add(new _3AddressCode());
+        codeBlock.add(new ThreeAddressCode());
         return codeBlock.size() - 1;
     }
 
     public void add3AddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
-        codeBlock.add(new _3AddressCode(op, opr1, opr2, opr3));
+        codeBlock.add(new ThreeAddressCode(op, opr1, opr2, opr3));
     }
 
     public void add3AddressCode(int i, Operation op, Address opr1, Address opr2, Address opr3) {
         codeBlock.remove(i);
-        codeBlock.add(i, new _3AddressCode(op, opr1, opr2, opr3));
+        codeBlock.add(i, new ThreeAddressCode(op, opr1, opr2, opr3));
     }
 
     public int getCurrentCodeBlockAddress() {
