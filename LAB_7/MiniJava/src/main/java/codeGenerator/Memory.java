@@ -4,13 +4,13 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class Memory {
-    private ArrayList<ThreeAddressCode> codeBlock;
-    private int lastTempIndex;
-    private int lastDataAddress;
     private final int stratTempMemoryAddress = 500;
     private final int stratDataMemoryAddress = 200;
     private final int dataSize = 4;
     private final int tempSize = 4;
+    private final ArrayList<ThreeAddressCode> codeBlock;
+    private int lastTempIndex;
+    private int lastDataAddress;
 
     public Memory() {
         codeBlock = new ArrayList<>();

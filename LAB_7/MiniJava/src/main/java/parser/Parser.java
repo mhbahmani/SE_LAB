@@ -1,13 +1,5 @@
 package parser;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Stack;
-
 import Log.Log;
 import codeGenerator.CodeGenerator;
 import codeGenerator.CodeGeneratorImpl;
@@ -16,11 +8,19 @@ import errorHandler.ErrorHandler;
 import scanner.LexicalAnalyzer;
 import scanner.token.Token;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Stack;
+
 public class Parser {
     private final ArrayList<Rule> rules;
     private final Stack<Integer> parsStack;
-    private ParseTable parseTable;
     private final CodeGenerator codeGenerator;
+    private ParseTable parseTable;
 
     public Parser() {
         parsStack = new Stack<>();
@@ -84,6 +84,6 @@ public class Parser {
                 e.printStackTrace();
             }
         }
-        if (!ErrorHandler.hasError) codeGenerator.printMemory();
+        if (!ErrorHandler.hasError) codeGenerator.printMemory(System.out);
     }
 }

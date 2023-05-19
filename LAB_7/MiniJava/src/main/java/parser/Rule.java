@@ -5,6 +5,9 @@ import scanner.token.Token;
 import java.util.ArrayList;
 
 public class Rule {
+    public NonTerminal LHS;
+    public ArrayList<GrammarSymbol> RHS;
+    public int semanticAction;
     public Rule(String stringRule) {
         int index = stringRule.indexOf("#");
         if (index != -1) {
@@ -31,8 +34,4 @@ public class Rule {
             }
         }
     }
-
-    public NonTerminal LHS;
-    public ArrayList<GrammarSymbol> RHS;
-    public int semanticAction;
 }
