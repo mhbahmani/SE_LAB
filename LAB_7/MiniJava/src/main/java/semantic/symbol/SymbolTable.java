@@ -1,9 +1,9 @@
 package semantic.symbol;
 
-import codeGenerator.Address;
-import codeGenerator.Memory;
-import codeGenerator.TypeAddress;
-import codeGenerator.VarType;
+import code_generator.Address;
+import code_generator.Memory;
+import code_generator.TypeAddress;
+import code_generator.VarType;
 import errorHandler.ErrorHandler;
 
 import java.util.ArrayList;

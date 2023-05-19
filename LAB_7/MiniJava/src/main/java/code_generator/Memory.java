@@ -1,4 +1,4 @@
-package codeGenerator;
+package code_generator;
 
 import java.io.PrintStream;
 import java.util.ArrayList;

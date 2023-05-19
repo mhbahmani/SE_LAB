@@ -1,10 +1,11 @@
 package parser;
 
 import log.Log;
-import codeGenerator.CodeGenerator;
-import codeGenerator.CodeGeneratorImpl;
-import codeGenerator.Memory;
+import code_generator.CodeGenerator;
+import code_generator.CodeGeneratorImpl;
+import code_generator.Memory;
 import errorHandler.ErrorHandler;
+import resource_loader.ResourceLoader;
 import scanner.LexicalAnalyzer;
 import scanner.token.Token;
 
@@ -13,6 +14,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -26,16 +28,16 @@ public class Parser {
         parsStack = new Stack<>();
         parsStack.push(0);
         try {
-            parseTable = new ParseTable(Files.readAllLines(Paths.get(Objects.requireNonNull(
-                    getClass().getClassLoader().getResource("parseTable")).toURI())).get(0));
+            ResourceLoader parseTableLoader = new ResourceLoader("parseTable");
+            parseTable = new ParseTable(parseTableLoader.getContent().get(0));
         } catch (Exception e) {
             e.printStackTrace();
         }
         rules = new ArrayList<>();
         try {
-            for (String stringRule : Files.readAllLines(Paths.get(Objects.requireNonNull(
-                    getClass().getClassLoader().getResource("Rules")).toURI()))) {
-                rules.add(new Rule(stringRule));
+            ResourceLoader ruleLoader = new ResourceLoader("Rules");
+            for (String stringRule : ruleLoader.getContent()) {
+                this.rules.add(new Rule(stringRule));
             }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();

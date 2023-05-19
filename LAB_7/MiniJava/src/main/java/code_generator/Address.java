@@ -1,4 +1,4 @@
-package codeGenerator;
+package code_generator;
 
 public class Address {
     public int num;

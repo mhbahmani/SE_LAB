@@ -1,4 +1,4 @@
-package codeGenerator;
+package code_generator;
 
 class ThreeAddressCode {
     public Operation operation;
