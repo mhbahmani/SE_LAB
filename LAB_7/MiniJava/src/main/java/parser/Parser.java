@@ -1,9 +1,11 @@
 package parser;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Stack;
 
 import Log.Log;
@@ -23,16 +25,18 @@ public class Parser {
         parsStack = new Stack<Integer>();
         parsStack.push(0);
         try {
-            parseTable = new ParseTable(Files.readAllLines(Paths.get("src/main/resources/parseTable")).get(0));
+            parseTable = new ParseTable(Files.readAllLines(Paths.get(Objects.requireNonNull(
+                    getClass().getClassLoader().getResource("parseTable")).toURI())).get(0));
         } catch (Exception e) {
             e.printStackTrace();
         }
         rules = new ArrayList<Rule>();
         try {
-            for (String stringRule : Files.readAllLines(Paths.get("src/main/resources/Rules"))) {
+            for (String stringRule : Files.readAllLines(Paths.get(Objects.requireNonNull(
+                    getClass().getClassLoader().getResource("Rules")).toURI()))) {
                 rules.add(new Rule(stringRule));
             }
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
         cg = new CodeGenerator();
