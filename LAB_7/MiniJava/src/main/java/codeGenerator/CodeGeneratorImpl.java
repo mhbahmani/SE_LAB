@@ -195,7 +195,7 @@ public class CodeGeneratorImpl implements CodeGenerator {
     }
 
     public void intPid(Token next) {
-        ss.push(new Address(Integer.parseInt(next.getValue()), VarType.Int, TypeAddress.Imidiate));
+        ss.push(new Address(Integer.parseInt(next.getValue()), VarType.Int, TypeAddress.Immediate));
     }
 
     public void startCall() {
@@ -226,8 +226,8 @@ public class CodeGeneratorImpl implements CodeGenerator {
         }
         Address temp = new Address(memory.getTemp(), t);
         ss.push(temp);
-        memory.add3AddressCode(Operation.ASSIGN, new Address(temp.num, VarType.Address, TypeAddress.Imidiate), new Address(symbolTable.getMethodReturnAddress(className, methodName), VarType.Address), null);
-        memory.add3AddressCode(Operation.ASSIGN, new Address(memory.getCurrentCodeBlockAddress() + 2, VarType.Address, TypeAddress.Imidiate), new Address(symbolTable.getMethodCallerAddress(className, methodName), VarType.Address), null);
+        memory.add3AddressCode(Operation.ASSIGN, new Address(temp.num, VarType.Address, TypeAddress.Immediate), new Address(symbolTable.getMethodReturnAddress(className, methodName), VarType.Address), null);
+        memory.add3AddressCode(Operation.ASSIGN, new Address(memory.getCurrentCodeBlockAddress() + 2, VarType.Address, TypeAddress.Immediate), new Address(symbolTable.getMethodCallerAddress(className, methodName), VarType.Address), null);
         memory.add3AddressCode(Operation.JP, new Address(symbolTable.getMethodAddress(className, methodName), VarType.Address), null, null);
     }
 

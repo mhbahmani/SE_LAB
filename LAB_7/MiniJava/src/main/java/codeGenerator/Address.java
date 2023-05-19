@@ -23,7 +23,7 @@ public class Address {
                 return num + "";
             case Indirect:
                 return "@" + num;
-            case Imidiate:
+            case Immediate:
                 return "#" + num;
         }
         return num + "";
