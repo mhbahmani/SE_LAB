@@ -1,8 +1,8 @@
 package parser;
 
 public class Action {
-    public ActionType action;
-    public int number;
+    private ActionType action;
+    private int number;
 
     public Action(ActionType action, int number) {
         this.action = action;
@@ -14,5 +14,13 @@ public class Action {
             return action.toString() + number;
         }
         return action.toString();
+    }
+
+    public ActionType getAction() {
+        return action;
+    }
+
+    public int getNumber() {
+        return number;
     }
 }
