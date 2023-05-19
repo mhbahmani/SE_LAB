@@ -13,8 +13,8 @@ public class ParseTable {
     public ParseTable(String jsonTable) throws Exception {
         jsonTable = jsonTable.substring(2, jsonTable.length() - 2);
         String[] Rows = jsonTable.split("],\\[");
-        Map<Integer, Token> terminals = new HashMap<Integer, Token>();
-        Map<Integer, NonTerminal> nonTerminals = new HashMap<Integer, NonTerminal>();
+        Map<Integer, Token> terminals = new HashMap<>();
+        Map<Integer, NonTerminal> nonTerminals = new HashMap<>();
         Rows[0] = Rows[0].substring(1, Rows[0].length() - 1);
         String[] cols = Rows[0].split("\",\"");
         for (int i = 1; i < cols.length; i++) {
@@ -22,8 +22,7 @@ public class ParseTable {
                 String temp = cols[i].substring(5);
                 try {
                     nonTerminals.put(i, NonTerminal.valueOf(temp));
-                } catch (Exception e) {
-                    temp = temp;
+                } catch (Exception ignored) {
                 }
             } else {
                 terminals.put(i, new Token(Token.getTyepFormString(cols[i]), cols[i]));

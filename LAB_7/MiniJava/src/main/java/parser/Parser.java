@@ -23,7 +23,7 @@ public class Parser {
     private final CodeGenerator codeGenerator;
 
     public Parser() {
-        parsStack = new Stack<Integer>();
+        parsStack = new Stack<>();
         parsStack.push(0);
         try {
             parseTable = new ParseTable(Files.readAllLines(Paths.get(Objects.requireNonNull(
@@ -31,7 +31,7 @@ public class Parser {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        rules = new ArrayList<Rule>();
+        rules = new ArrayList<>();
         try {
             for (String stringRule : Files.readAllLines(Paths.get(Objects.requireNonNull(
                     getClass().getClassLoader().getResource("Rules")).toURI()))) {
@@ -80,8 +80,8 @@ public class Parser {
                         break;
                 }
                 Log.print("");
-            } catch (Exception ignored) {
-                ignored.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         if (!ErrorHandler.hasError) codeGenerator.printMemory();
