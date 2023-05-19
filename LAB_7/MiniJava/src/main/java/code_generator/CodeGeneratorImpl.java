@@ -293,7 +293,7 @@ public class CodeGeneratorImpl implements CodeGenerator {
         if (s1.varType != VarType.Int || s2.varType != VarType.Int) {
             ErrorHandler.printError("In multiplication two operands must be integer");
         }
-        memory.add3AddressCode(Operation.MULT, s1, s2, temp);
+        memory.add3AddressCode(Operation.MUL, s1, s2, temp);
         ss.push(temp);
     }
 
