@@ -10,7 +10,7 @@ public class ParseTable {
     private final ArrayList<Map<Token, Action>> actionTable;
     private final ArrayList<Map<NonTerminal, Integer>> gotoTable;
 
-    public ParseTable(String jsonTable) throws Exception {
+    public ParseTable(String jsonTable) {
         jsonTable = jsonTable.substring(2, jsonTable.length() - 2);
         String[] Rows = jsonTable.split("],\\[");
         Map<Integer, Token> terminals = new HashMap<>();
@@ -46,7 +46,7 @@ public class ParseTable {
                     } else if (nonTerminals.containsKey(j)) {
                         gotoTable.get(gotoTable.size() - 1).put(nonTerminals.get(j), Integer.parseInt(cols[j]));
                     } else {
-                        throw new Exception();
+                        throw new RuntimeException();
                     }
                 }
             }

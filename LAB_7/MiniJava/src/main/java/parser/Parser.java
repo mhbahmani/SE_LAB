@@ -34,7 +34,7 @@ public class Parser {
         try {
             ResourceLoader ruleLoader = new ResourceLoader("Rules");
             for (String stringRule : ruleLoader.getContent()) {
-                this.rules.add(new Rule(stringRule));
+                rules.add(new Rule(stringRule));
             }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
@@ -49,6 +49,7 @@ public class Parser {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return new ParseTable("{}");
     }
 
     public void startParse(java.util.Scanner sc) {
