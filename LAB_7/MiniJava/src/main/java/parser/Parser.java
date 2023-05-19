@@ -10,6 +10,8 @@ import java.util.Stack;
 
 import Log.Log;
 import codeGenerator.CodeGenerator;
+import codeGenerator.CodeGeneratorImpl;
+import codeGenerator.Memory;
 import errorHandler.ErrorHandler;
 import scanner.LexicalAnalyzer;
 import scanner.token.Token;
@@ -39,7 +41,7 @@ public class Parser {
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
-        cg = new CodeGenerator();
+        cg = new CodeGeneratorImpl(new Memory());
     }
 
     public void startParse(java.util.Scanner sc) {

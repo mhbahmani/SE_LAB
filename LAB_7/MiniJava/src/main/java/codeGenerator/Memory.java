@@ -1,5 +1,6 @@
 package codeGenerator;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class Memory {
@@ -12,7 +13,7 @@ public class Memory {
     private final int tempSize = 4;
 
     public Memory() {
-        codeBlock = new ArrayList<ThreeAddressCode>();
+        codeBlock = new ArrayList<>();
         lastTempIndex = stratTempMemoryAddress;
         lastDataAddress = stratDataMemoryAddress;
     }
@@ -45,10 +46,10 @@ public class Memory {
         return codeBlock.size();
     }
 
-    public void pintCodeBlock() {
-        System.out.println("Code Block");
+    public void pintCodeBlock(PrintStream printStream) {
+        printStream.println("Code Block");
         for (int i = 0; i < codeBlock.size(); i++) {
-            System.out.println(i + " : " + codeBlock.get(i).toString());
+            printStream.println(i + " : " + codeBlock.get(i).toString());
         }
     }
 }
