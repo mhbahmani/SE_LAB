@@ -159,7 +159,6 @@ public class CodeGenerator {
                         t = VarType.Bool;
                         break;
                     case Int:
-                        t = VarType.Int;
                         break;
                 }
                 ss.push(new Address(s.address, t));
@@ -187,7 +186,6 @@ public class CodeGenerator {
                 t = VarType.Bool;
                 break;
             case Int:
-                t = VarType.Int;
                 break;
         }
         ss.push(new Address(s.address, t));
