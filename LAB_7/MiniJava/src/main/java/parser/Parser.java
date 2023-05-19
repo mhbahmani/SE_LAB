@@ -71,15 +71,15 @@ public class Parser {
                         break;
                     case reduce:
                         Rule rule = rules.get(currentAction.getNumber());
-                        for (int i = 0; i < rule.RHS.size(); i++) {
+                        for (int i = 0; i < rule.getRHS().size(); i++) {
                             parsStack.pop();
                         }
 
-                        Log.print(parsStack.peek() + "\t" + rule.LHS);
-                        parsStack.push(parseTable.getGotoTable(parsStack.peek(), rule.LHS));
+                        Log.print(parsStack.peek() + "\t" + rule.getLHS());
+                        parsStack.push(parseTable.getGotoTable(parsStack.peek(), rule.getLHS()));
                         Log.print(parsStack.peek() + "");
                         try {
-                            codeGenerator.semanticFunction(rule.semanticAction, lookAhead);
+                            codeGenerator.semanticFunction(rule.getSemanticAction(), lookAhead);
                         } catch (Exception e) {
                             Log.print("Code Genetator Error");
                         }

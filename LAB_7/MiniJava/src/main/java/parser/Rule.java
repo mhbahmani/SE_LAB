@@ -5,9 +5,10 @@ import scanner.token.Token;
 import java.util.ArrayList;
 
 public class Rule {
-    public NonTerminal LHS;
-    public ArrayList<GrammarSymbol> RHS;
-    public int semanticAction;
+    private final NonTerminal LHS;
+    private final ArrayList<GrammarSymbol> RHS;
+    private int semanticAction;
+
     public Rule(String stringRule) {
         int index = stringRule.indexOf("#");
         if (index != -1) {
@@ -22,7 +23,7 @@ public class Rule {
         }
         String[] splited = stringRule.split("->");
         LHS = NonTerminal.valueOf(splited[0]);
-        RHS = new ArrayList<GrammarSymbol>();
+        RHS = new ArrayList<>();
         if (splited.length > 1) {
             String[] RHSs = splited[1].split(" ");
             for (String s : RHSs) {
@@ -33,5 +34,17 @@ public class Rule {
                 }
             }
         }
+    }
+
+    public NonTerminal getLHS() {
+        return LHS;
+    }
+
+    public ArrayList<GrammarSymbol> getRHS() {
+        return RHS;
+    }
+
+    public int getSemanticAction() {
+        return semanticAction;
     }
 }
