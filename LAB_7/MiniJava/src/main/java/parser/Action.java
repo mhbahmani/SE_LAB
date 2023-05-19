@@ -21,7 +21,3 @@ public class Action {
         return action.toString() + number;
     }
 }
-
-enum act {
-    shift, reduce, accept
-}
