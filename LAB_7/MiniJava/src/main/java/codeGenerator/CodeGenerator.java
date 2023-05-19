@@ -25,7 +25,7 @@ public class CodeGenerator {
     }
 
     public void semanticFunction(int func, Token next) {
-        Log.print("codegenerator : " + func);
+        Log.print("codeGenerator : " + func);
         switch (func) {
             case 0:
                 return;
@@ -36,13 +36,13 @@ public class CodeGenerator {
                 pid(next);
                 break;
             case 3:
-                fpid();
+                fPid();
                 break;
             case 4:
-                kpid(next);
+                kPid(next);
                 break;
             case 5:
-                intpid(next);
+                intPid(next);
                 break;
             case 6:
                 startCall();
@@ -63,7 +63,7 @@ public class CodeGenerator {
                 sub();
                 break;
             case 12:
-                mult();
+                multiplication();
                 break;
             case 13:
                 label();
@@ -167,7 +167,7 @@ public class CodeGenerator {
         symbolStack.push(next.value);
     }
 
-    public void fpid() {
+    public void fPid() {
         ss.pop();
         ss.pop();
 
@@ -188,11 +188,11 @@ public class CodeGenerator {
         ss.push(new Address(s.address, t));
     }
 
-    public void kpid(Token next) {
+    public void kPid(Token next) {
         ss.push(symbolTable.get(next.value));
     }
 
-    public void intpid(Token next) {
+    public void intPid(Token next) {
         ss.push(new Address(Integer.parseInt(next.value), VarType.Int, TypeAddress.Imidiate));
     }
 
@@ -284,12 +284,12 @@ public class CodeGenerator {
         ss.push(temp);
     }
 
-    public void mult() {
+    public void multiplication() {
         Address temp = new Address(memory.getTemp(), VarType.Int);
         Address s2 = ss.pop();
         Address s1 = ss.pop();
         if (s1.varType != VarType.Int || s2.varType != VarType.Int) {
-            ErrorHandler.printError("In mult two operands must be integer");
+            ErrorHandler.printError("In multiplication two operands must be integer");
         }
         memory.add3AddressCode(Operation.MULT, s1, s2, temp);
         ss.push(temp);
