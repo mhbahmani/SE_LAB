@@ -6,8 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Token {
-    public Type type;
-    public String value;
+    private final Type type;
+    private final String value;
 
     public Token(Type type, String value) {
         this.type = type;
@@ -51,5 +51,9 @@ public class Token {
         int result = type.hashCode();
         if (type == Type.KEYWORDS) result = prime * result + (value == null ? 0 : value.hashCode());
         return result;
+    }
+
+    public String getValue() {
+        return value;
     }
 }

@@ -154,7 +154,7 @@ public class CodeGeneratorImpl implements CodeGenerator {
             String className = symbolStack.pop();
             try {
 
-                Symbol s = symbolTable.get(className, methodName, next.value);
+                Symbol s = symbolTable.get(className, methodName, next.getValue());
                 doSymbol(s);
 
 
@@ -166,7 +166,7 @@ public class CodeGeneratorImpl implements CodeGenerator {
         } else {
             ss.push(new Address(0, VarType.Non));
         }
-        symbolStack.push(next.value);
+        symbolStack.push(next.getValue());
     }
 
     public void fPid() {
@@ -191,11 +191,11 @@ public class CodeGeneratorImpl implements CodeGenerator {
     }
 
     public void kPid(Token next) {
-        ss.push(symbolTable.get(next.value));
+        ss.push(symbolTable.get(next.getValue()));
     }
 
     public void intPid(Token next) {
-        ss.push(new Address(Integer.parseInt(next.value), VarType.Int, TypeAddress.Imidiate));
+        ss.push(new Address(Integer.parseInt(next.getValue()), VarType.Int, TypeAddress.Imidiate));
     }
 
     public void startCall() {
