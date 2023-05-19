@@ -18,7 +18,6 @@ public class CodeGenerator {
 
     public CodeGenerator() {
         symbolTable = new SymbolTable(memory);
-        //TODO
     }
 
     public void printMemory() {
@@ -204,7 +203,6 @@ public class CodeGenerator {
     }
 
     public void startCall() {
-        //TODO: method ok
         ss.pop();
         ss.pop();
         String methodName = symbolStack.pop();
@@ -215,7 +213,6 @@ public class CodeGenerator {
     }
 
     public void call() {
-        //TODO: method ok
         String methodName = callStack.pop();
         String className = callStack.pop();
         try {
@@ -439,7 +436,6 @@ public class CodeGenerator {
     }
 
     public void defParam() {
-        //TODO : call Ok
         ss.pop();
         String param = symbolStack.pop();
         String methodName = symbolStack.pop();
