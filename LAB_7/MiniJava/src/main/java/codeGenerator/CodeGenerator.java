@@ -221,7 +221,6 @@ public class CodeGenerator {
         VarType t = VarType.Int;
         switch (symbolTable.getMethodReturnType(className, methodName)) {
             case Int:
-                t = VarType.Int;
                 break;
             case Bool:
                 t = VarType.Bool;
@@ -244,7 +243,6 @@ public class CodeGenerator {
                     t = VarType.Bool;
                     break;
                 case Int:
-                    t = VarType.Int;
                     break;
             }
             Address param = ss.pop();
