@@ -2,9 +2,9 @@ package codeGenerator;
 
 class ThreeAddressCode {
     public Operation operation;
-    public Address Operand1;
-    public Address Operand2;
-    public Address Operand3;
+    public Address operand1;
+    public Address operand2;
+    public Address operand3;
 
     public ThreeAddressCode() {
 
@@ -12,20 +12,20 @@ class ThreeAddressCode {
 
     public ThreeAddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
         operation = op;
-        Operand1 = opr1;
-        Operand2 = opr2;
-        Operand3 = opr3;
+        operand1 = opr1;
+        operand2 = opr2;
+        operand3 = opr3;
     }
 
     public String toString() {
         if (operation == null) return "";
         StringBuilder res = new StringBuilder("(");
         res.append(operation.toString()).append(",");
-        if (Operand1 != null) res.append(Operand1.toString());
+        if (operand1 != null) res.append(operand1);
         res.append(",");
-        if (Operand2 != null) res.append(Operand2.toString());
+        if (operand2 != null) res.append(operand2);
         res.append(",");
-        if (Operand3 != null) res.append(Operand3.toString());
+        if (operand3 != null) res.append(operand3);
         res.append(")");
 
         return res.toString();
