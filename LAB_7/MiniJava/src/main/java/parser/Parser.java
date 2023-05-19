@@ -17,11 +17,10 @@ import scanner.LexicalAnalyzer;
 import scanner.token.Token;
 
 public class Parser {
-    private ArrayList<Rule> rules;
-    private Stack<Integer> parsStack;
+    private final ArrayList<Rule> rules;
+    private final Stack<Integer> parsStack;
     private ParseTable parseTable;
-    private LexicalAnalyzer lexicalAnalyzer;
-    private CodeGenerator cg;
+    private final CodeGenerator codeGenerator;
 
     public Parser() {
         parsStack = new Stack<Integer>();
@@ -41,11 +40,11 @@ public class Parser {
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
-        cg = new CodeGeneratorImpl(new Memory());
+        codeGenerator = new CodeGeneratorImpl(new Memory());
     }
 
     public void startParse(java.util.Scanner sc) {
-        lexicalAnalyzer = new LexicalAnalyzer(sc);
+        LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(sc);
         Token lookAhead = lexicalAnalyzer.getNextToken();
         boolean finish = false;
         Action currentAction;
@@ -71,7 +70,7 @@ public class Parser {
                         parsStack.push(parseTable.getGotoTable(parsStack.peek(), rule.LHS));
                         Log.print(parsStack.peek() + "");
                         try {
-                            cg.semanticFunction(rule.semanticAction, lookAhead);
+                            codeGenerator.semanticFunction(rule.semanticAction, lookAhead);
                         } catch (Exception e) {
                             Log.print("Code Genetator Error");
                         }
@@ -85,6 +84,6 @@ public class Parser {
                 ignored.printStackTrace();
             }
         }
-        if (!ErrorHandler.hasError) cg.printMemory();
+        if (!ErrorHandler.hasError) codeGenerator.printMemory();
     }
 }
