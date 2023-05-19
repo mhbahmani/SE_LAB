@@ -4,26 +4,24 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class Memory {
-    private final int stratTempMemoryAddress = 500;
-    private final int stratDataMemoryAddress = 200;
-    private final int dataSize = 4;
-    private final int tempSize = 4;
     private final ArrayList<ThreeAddressCode> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
 
     public Memory() {
         codeBlock = new ArrayList<>();
-        lastTempIndex = stratTempMemoryAddress;
-        lastDataAddress = stratDataMemoryAddress;
+        lastTempIndex = 500;
+        lastDataAddress = 200;
     }
 
     public int getTemp() {
+        int tempSize = 4;
         lastTempIndex += tempSize;
         return lastTempIndex - tempSize;
     }
 
     public int getDateAddress() {
+        int dataSize = 4;
         lastDataAddress += dataSize;
         return lastDataAddress - dataSize;
     }
