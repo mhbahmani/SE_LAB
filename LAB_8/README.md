@@ -7,21 +7,21 @@
 
 ## بخش‌های مختلف
 کاربران به عنوان درخواست‌کننده، ابتدا صفحه‌ای مانند صفحه‌ی زیر می‌بینند.
-![Main Dashboard](./static/main.jpeg)
+![Main Dashboard](https://github.com/mhbahmani/SE_LAB/blob/master/LAB_8/static/main.jpeg?raw=true)
 
 با انتخاب بخش مورد نظر، وارد صفحه‌ی فرم‌ها می‌شود.
 
-![Choose Form](./static/chooseRequest.png)
+![Choose Form](https://github.com/mhbahmani/SE_LAB/blob/master/LAB_8/static/chooseRequest.png?raw=true)
 
 در این قسمت، می‌تواند متناسب با درخواست خود، وارد فرم مشخص شده شود. بعد از پر کردن فرم، درخواست به سرویس‌دهنده می‌رسد.  
 در سمت سرویس‌دهنده، پنل مجزایی وجود دارد. به این صورت که ابتدا درخواست‌ها Approve می‌شوند و سپس به یکی از اعضای تیم Assigne می‌شود. افراد می‌توانند در داشبورد خود، درخواست‌هایی که به آن‌ها اساین شده را ببینند.
-![Dashboard](./static/dasboard.png)
+![Dashboard](https://github.com/mhbahmani/SE_LAB/blob/master/LAB_8/static/dasboard.png?raw=true)
 
 در صفحه‌ی مخصوص هر درخواست،‌ مشروح درخواست کاربر، ددلاین و سایر موارد مربوط به SLA قابل مشاهده هستند. هر درخواست در صفحه‌ای مانند صفحه‌ی زیر قابل مشاهده است.
-![Issue](./static/issue.png)
+![Issue](https://github.com/mhbahmani/SE_LAB/blob/master/LAB_8/static/issue.png?raw=true)
 
 در پایین صفحه، امکان ارتباط با درخواست‌کننده از طریق کامنت نیز هست. همچنین، امکان نوشتن کامنت به صورت درون تیمی نیز وجود دارد (Internal). یعنی کامنتی که فقط سرویس‌دهندگان می‌بینند و کاربر درخواست دهنده امکان مشاهده‌ی آن را ندارد.
-![Comment](./static/comment.png)
+![Comment](https://github.com/mhbahmani/SE_LAB/blob/master/LAB_8/static/comment.png?raw=true)
 
 موارد مربوط به SLA، در سمت راست صفحه قابل مشاهده است. مواردی نظیر زمان، شخص موظف به اجرای درخواست و موارد مشابه.
-![SLA](./static/SLA.png)
+![SLA](https://github.com/mhbahmani/SE_LAB/blob/master/LAB_8/static/SLA.png?raw=true)
