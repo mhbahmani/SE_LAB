@@ -1,15 +1,7 @@
-The code is a mess, don't focus on it :)  
-I can do better :)
+How to setup
 
 ``` 
-pip install -r requirements.txt
-
-mkdir images
-mkdir merged_images
-
-# Set the tweet id
-python listener.py
-
-# Set the ACTION variable
-python events_handler.py
+docker build -t mhbahmani/twtitter-likes:base -f Dockerfile-Base .
+docker build -t mhbahmani/twtitter-likes:listener -t LISTENER .
+docker build -t mhbahmani/twtitter-likes:handler -t HANDLER .
 ```
